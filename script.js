@@ -1,11 +1,11 @@
-// Click start button-game begins
+
 // Timer starts & Given a question
 // Answer question->Given new question
-// Answer Incorrectly->Time is subtracted
-// When all questions are answered or Time=0-> Game over
+
+
 // when game is over->Enter Initials for highscore
 
-// Clock
+
 
 
 var timerElement = document.querySelector(".timer-count");
@@ -13,22 +13,41 @@ var startButton = document.querySelector(".start-button");
 var timer;
 var timerCount;
 var score = 0;
-var answers = questions[answer[i]]
+
+// var answer = questions[answers[" "]];
+
+// Questions for test
 var questions = [ 
   {
-    question: "What is a value that can change depending on conditions or on information passed to the program?",
-    answers: ["Variable", "Boolean", "String", "Constant"]
+    question1: "What is a value that can change depending on conditions or on information passed to the program?",
+    answers: [
+    {text: "Variable", isCorrect: true }, 
+    {text: "Boolean", isCorrect: false }, 
+    {text: "String", isCorrect: false }, 
+    {text: "Constant", isCorrect: false }
+  ]
+  },
 
-  },
   {
- question: "What can we use to store a list of multiple data types?",
-    answers: ["Variable", "Array", "String", "Constant"]
-  
+ question2: "What can we use to store a list of multiple data types?",
+    answers: [
+    {text: "Variable", isCorrect: false }, 
+    {text: "Array", isCorrect: true },
+    {text: "String", isCorrect: false },
+    {text: "Constant", isCorrect: false },
+  ]
   },
-  { question: "What can we use to store a list of multiple data types?",
-    answers: ["Variable", "Array", "String", "Constant"]
+
+  { question3: "What is the opposite of a variable?",
+    answers: [
+      {text: "Variable", isCorrect: false },
+      {text: "Array", isCorrect: false }, 
+      {text: "String", isCorrect: false }, 
+      {text: "Constant", isCorrect: true }
+    ]
   },
 ]
+
 
 
 
@@ -38,16 +57,18 @@ var answers = ["variable", "array", "modulus", "object", "function", "string", "
 function init() {
 }
 
-
+// start timer
 function startGame() {
   timerCount = 60;
   startButton.disabled = true;
   startTimer()
+  takeTest()
 }
 
-// takeTest()
 
 
+
+// timer function
 function startTimer() {
   timer = setInterval(function() {
     timerCount--;
@@ -56,36 +77,37 @@ function startTimer() {
     if (score && timerCount > 0) {
         clearInterval(timer);
             }
-    }
-
-    if (timerCount === 0) {
+            // When all questions are answered or Time=0-> Game over
+    } else if (timerCount === 0) {
       clearInterval(timer);
-      loseGame();
     }
   }, 1000);
+  console.log(timer)
+}
+
+
 
   function takeTest() {
+    if (timerCount !== 60) {
     for (var i=0; i <questions.length; i++) {
-      var userResponse = window.prompt(questions[i.prompt])
-      if(userResponse === questions[i].answer){
+      var userResponse = document.querySelector("#selections")
+      if(userResponse === questions.answers[i])
+      {
         score++;
         alert("Correct!");
       } else {
         alert("Incorrect!")
-        timerCount - 10;
-      }
-      }
+        (timerCount - 10);
     }
 }
-
-checkCorrect() {
-  if answers
+}
 }
 
 
+// checkCorrect() {
+//   if answers
+// }
 
-startButton.addEventListener("click", startGame);
 
-init();
-
-
+// Click start button-game begins
+startButton.addEventListener("click", startGame)
