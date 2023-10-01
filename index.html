@@ -13,6 +13,7 @@
         <div>
         <button id="highScore">High Scores</button>
         </div>
+        <!-- // Clock -->
     <div class= "card-timer">
         <div class = "timer-text">
         <div class="large-font timer-count">60</div>
@@ -21,7 +22,7 @@
       </div>
         </nav>
 
-    <header>
+    <header id="startRemove">
       <div class= "large-font">Coding Quiz</div>
       <button class="start-button">Start</button>
     </header>
@@ -29,13 +30,10 @@
 
     <main>
       <section>
-  <div class="questions" id="?"></div>
-  <div>
-    <button onclick="checkCorrect()" id="button1"></button>
-    <button onclick="checkCorrect()" id="button2"></button>
-    <button onclick="checkCorrect()" id="button3"></button>
-    <button onclick="checkCorrect()" id="button4"></button>
-  </div>
+        <!-- Question -->
+  <div class="questions" id="quizQuestions"></div>
+        <!-- Answers -->
+  <div id="possibleAnswers"></div>
     
 
       </section>
