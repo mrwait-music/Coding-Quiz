@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
+
 <body>
 
-    <nav id="navBar">
+  <nav id="navBar">
+    <div>
+      <button id="highScore">High Scores</button>
+    </div>
+    <!-- // Clock -->
+    <div class="card-timer">
+      <div class="timer-text">
         <div>
-        <button id="highScore">High Scores</button>
+          <div class="large-font timer-count">60</div>
         </div>
-        <!-- // Clock -->
-    <div class= "card-timer">
-        <div class = "timer-text">
-        <div class="large-font timer-count">60</div>
-        <div id="score">Score: 0</div>
+        <div id="score">0</div>
       </div>
-      </div>
-        </nav>
+    </div>
+  </nav>
 
-    <header id="startRemove">
-      <div class= "large-font">Coding Quiz</div>
-      <div>
+  <header id="startRemove">
+    <div class="large-font">Coding Quiz</div>
+    <div>
       <button class="start-button">Start</button>
-      </div>
-    </header>
+    </div>
+  </header>
 
 
-    <main>
-      <section>
-        <!-- Question -->
-  <div class="questions" id="quizQuestions"></div>
-        <!-- Answers -->
-  <div id="possibleAnswers"></div>
-    
+  <main>
+    <section>
+      <!-- Question -->
+      <div class="questions" id="quizQuestions"></div>
+      <!-- Answers -->
+      <div id="possibleAnswers"></div>
 
-      </section>
-    </main>
-  </body>
+
+    </section>
+  </main>
+</body>
+
 </html>

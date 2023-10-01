@@ -1,6 +1,6 @@
 
 // Timer starts & Given a question
-// Answer question->Given new question
+
 
 
 // when game is over->Enter Initials for highscore
@@ -12,14 +12,13 @@ var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var remove = document.querySelector("#startRemove")
 var userResponse = document.querySelector("#possibleAnswers")
+var scoreEl = document.querySelector("#score")
+var scoreCount;
 var timer;
 var timerCount;
 var score;
-var scoreEl = document.querySelector("#score")
 var qCounter = 0;
 
-
-// var answer = questions[answers[" "]];
 
 // Questions for test
 var questions = [
@@ -51,9 +50,6 @@ var questions = [
 
 
 
-// var answers = ["variable", "array", "modulus", "object", "function", "string", "boolean", "constant", "if else", "Query Selector"];
-
-
 function init() {
 }
 
@@ -74,7 +70,6 @@ function startTimer() {
   timer = setInterval(function () {
     timerCount--;
     timerElement.textContent = timerCount;
-    console.log(timerCount)
     if (timerCount > 0) {
       if (score && timerCount > 0) {
         clearInterval(timer);
@@ -87,7 +82,7 @@ function startTimer() {
 }
 
 
-
+// Answer question->Given new question
 function takeTest() {
 
   var quizQuestionsEl = document.querySelector("#quizQuestions")
@@ -108,11 +103,14 @@ function takeTest() {
 function checkCorrect(event) {
 var userAnswer = event.target.textContent
 var correctAnswer = questions[qCounter].correctAnswer
+scoreEl.textContent = scoreCount;
+
 if (userAnswer === correctAnswer){
-  scoreEl++
+  scoreCount++;
   console.log("Correct")
 } else {
   // (timerCount - 10)
+  (timerCount - 10)
   console.log("Incorrect")
 }
 // scoreEl.textContent = score

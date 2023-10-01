@@ -1,18 +1,22 @@
 #navBar {
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: aqua;
 }
 
 header {
+    display: block;
     display: flex;
+    height: 100px;
     justify-content: center;
     margin: 10%;
-    align-items: center;
-
+    background-color: aqua;
 }
 
 main {
     display: flex;
     justify-content: center;
+    color: blue;
 }
